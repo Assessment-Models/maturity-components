@@ -45,6 +45,19 @@ index = load("components/index.yaml")
 for key in ("id", "type", "name", "version", "conformance"):
     if key not in manifest:
         errors.append(f"model.yaml: missing required field {key}")
+
+# The manifest type MUST be `component`: the registry record for this asset
+# declares type=component, and assessment-ci's validate_ecosystem.py compares
+# manifest.type to record.type. A mismatch is a hard Level 3 CI failure.
+#
+# The `component` value is valid in the published model-manifest.schema.json
+# (assessment-ci PR #6) and in the published registration.schema.json
+# (assessment-registry). Both schemas agree.
+if manifest.get("type") != "component":
+    errors.append(
+        f"model.yaml: type must be 'component', found {manifest.get('type')!r} "
+        f"(the registry record declares type=component)"
+    )
 conf = manifest.get("conformance") or {}
 if not (conf.get("contract") or {}).get("id"):
     errors.append("model.yaml: conformance.contract.id is required")
