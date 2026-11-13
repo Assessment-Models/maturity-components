@@ -1,11 +1,11 @@
 id: maturity-components
-type: maturity-model
+type: component
 name: Maturity Components
 description: Reusable, versioned maturity component packages — dimension, criteria, level-expectation
   and evidence-requirement bundles consumed by maturity models under explicit import / extend / override
   kinds. The taxonomy assigns reusable components their own repository class (GOVERNANCE.md); this is
   that repository.
-version: 1.0.0
+version: 1.0.1
 conformance:
   contract:
     id: opendea-assessment-metamodel
