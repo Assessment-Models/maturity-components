@@ -1,0 +1,30 @@
+id: dea:registry-maturity-components
+name: OpenDEA Maturity Component Registry (Assessment-Models release)
+version: 1.0.0
+metamodel_version: 1.0.0
+status: stable
+description: Index of reusable maturity component packages published by this repository. Each package
+  is independently versioned and referenced by id+version with an explicit kind (import / extend / override)
+  per CR-AM-10 §4. The upstream canonical component registry lives in technehub-labs/dea-metamodel (assessment-models/maturity/components/registry.yaml);
+  this repository publishes the packages themselves, giving the component asset class the home its registration
+  record already claims.
+components:
+- id: dea:component-digital-culture
+  version: 1.0.0
+  kind: dimension-package
+  path: components/digital-culture.yaml
+- id: dea:component-technology-adoption
+  version: 1.0.0
+  kind: dimension-package
+  path: components/technology-adoption.yaml
+- id: dea:component-operations-modernization
+  version: 1.0.0
+  kind: dimension-package
+  path: components/operations-modernization.yaml
+- id: dea:component-services-delivery
+  version: 1.0.0
+  kind: dimension-package
+  path: components/services-delivery.yaml
+provenance: Packages extracted from the OpenDEA Component Registry at the metamodel reference pinned in
+  this repository. A component must be published in the upstream registry before any model may reference
+  it.
