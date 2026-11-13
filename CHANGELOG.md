@@ -6,6 +6,19 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-13
+
+### Fixed
+
+- The manifest now declares `type: component`, matching the registration record for this asset. The registry's `registration.schema.json` and assessment-ci's `model-manifest.schema.json` now agree on the `component` asset type (assessment-ci PR #6), so the manifest is schema-valid and the Level 3 ecosystem coherence check passes.
+- Level 1 validation now asserts `model.yaml` declares `type: component`, so a future drift is caught locally instead of at Level 3.
+
+### Notes
+
+- No component package content changed. The four dimension packages and the component index are byte-identical to v1.0.0.
+- The prior mismatch was latent since the registration record was written on 2026-10-31. It was masked because the source repository returned HTTP 404, so the ecosystem validator classified this asset as "legacy/umbrella" and skipped the coherence check entirely.
+
+
 ## [1.0.0] — 2026-11-13
 
 ### Added
